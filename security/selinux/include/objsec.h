@@ -26,6 +26,8 @@
 #include <linux/spinlock.h>
 #include <linux/in6.h>
 
+#include <net/net_namespace.h>
+
 struct task_security_struct {
 	u32 osid;		
 	u32 sid;		
@@ -78,6 +80,7 @@ struct ipc_security_struct {
 };
 
 struct netif_security_struct {
+	struct net *ns;			/* network namespace */
 	int ifindex;			
 	u32 sid;			
 };
