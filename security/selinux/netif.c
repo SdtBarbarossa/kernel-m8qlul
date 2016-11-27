@@ -101,7 +101,7 @@ static int sel_netif_sid_slow(struct net *ns, int ifindex, u32 *sid)
 	}
 
 	spin_lock_bh(&sel_netif_lock);
-	netif = sel_netif_find(ns, ifindex)
+	netif = sel_netif_find(ns, ifindex);
 	if (netif != NULL) {
 		*sid = netif->nsec.sid;
 		ret = 0;
